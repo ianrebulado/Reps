@@ -1,0 +1,2 @@
+class PlannedExercise < ApplicationRecord
+end
