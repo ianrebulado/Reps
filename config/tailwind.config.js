@@ -14,6 +14,10 @@ module.exports = {
       },
       backgroundImage: {
         'bg': "url('bg.png')"
+      },
+      colors : {
+        'yellow': '#E6FE58',
+        'purple': '#7058FE'
       }
     },
   },
