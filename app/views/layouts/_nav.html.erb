@@ -1,25 +1,33 @@
-<nav class="flex p-6 text-xl justify-between items-center outline-dashed outline-red-400">
+<nav class="flex flex-col text-base justify-between bg-zinc-900 px-8 min-h-screen w-1/5 p-4 no-underline">
+  
+  <div class="flex gap-2 mt-8 items-center justify-start">
+    <%= image_tag 'logo.png', alt: 'Logo', class:"h-10" %>
+    <%= link_to 'REPS', home_path, class:"text-2xl font-bold no-underline" %>
+  </div>
 
+  <div class="flex flex-col tracking-wider justify-evenly text-base font-bold gap-6">
+    <div class="hover:bg-yellow-600 hover:text-black rounded-xl px-2 py-4 cursor-pointer">
+      <i class="bi bi-house"></i>
+      <%= link_to 'DASHBOARD', home_path, class: 'inline-block px-1 py-1 no-underline' %>
+    </div>
+    <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
+      <i class="bi bi-person"></i>
+      <%= link_to 'PROFILE', profile_path, class: 'inline-block px-1 py-1 hover:text-black' %>
+    </div>
+    <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
+      <i class="bi bi-journal"></i>
+      <%= link_to 'PROGRAMS', workout_path, class: 'inline-block px-1 py-1 hover:text-black' %>
+    </div>
+    <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
+      <i class="bi bi-hammer"></i>
+      <%= link_to 'WORKOUTS', workout_path, class: 'inline-block px-1 py-1 hover:text-black' %>
+    </div>
+  </div>
 
-<div class="flex gap-3  items-center">
-<img src="assets/logo.png" alt="" class="h-8">
-Reps
-</div>
+ 
+    <div class="bg-yellow-600 rounded-xl text-zinc-800 font-bold px-2 py-4 cursor-pointer flex justify-center items-center">
+      <i class="bi bi-box-arrow-in-left text-xl"></i>
+      <%= button_to "LOGOUT", destroy_user_session_path, method: :delete, class:"p-1" %>
+    </div>
 
-<div class="flex gap-5 outline-dashed items-center bg-yellow text-black outline-red-400 p-3">
-
-<p> Home </p>
-<p> Workouts </p>
-<p> Profile </p>
-
-</div>
-
-
-<div class=" bg-purple text-base p-3 rounded-xl">
-
-<%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-
-</div>
-
-
-</nav>  
+</nav>
