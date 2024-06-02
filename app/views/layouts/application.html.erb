@@ -6,14 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
+    <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %> 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag 'logo.png' %>
   </head>
 
-  <body class="min-h-screen text-white bg-black">
-    <main>
+  <body class="min-h-screen text-white bg-fixed bg-center bg-cover bg-no-repeat sm:bg-contain md:bg-cover lg:bg-contain xl:bg-cover bg-bg3">
+    <main class="">
       <%= yield %>
     </main>
   </body>
 </html>
+
+
+<!--bg-fixed bg-center bg-cover bg-no-repeat sm:bg-contain md:bg-cover lg:bg-contain xl:bg-cover bg-bg2-->
