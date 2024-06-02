@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   root "home#index"
 
   get "home", to: "home#home"
+  get "profile", to: "home#show"
+  get "workout", to: "workouts#index"
 end
