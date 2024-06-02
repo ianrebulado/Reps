@@ -1,29 +1,36 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    './public/*.html',
-    './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}'
+    "./public/*.html",
+    "./app/helpers/**/*.rb",
+    "./app/javascript/**/*.js",
+    './app/assets/stylesheets/**/*.css',
+    "./app/views/**/*.{erb,haml,html,slim}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        'bg': "url('bg.png')"
+        bg: "url('bg.png')",
+        bg2: "url('bg.jpg')",
+        bg3: "url('bg3.jpg')"
       },
-      colors : {
-        'yellow': '#E6FE58',
-        'purple': '#7058FE'
-      }
+      colors: {
+        yellow: {
+          400: "#E6FE58",
+          600: "#DEFE25",
+        },
+        purple: "#58E6FE",
+        offwhite: "B6B6B6",
+      },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-  ]
-}
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+  ],
+};

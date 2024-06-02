@@ -11,3 +11,12 @@
 }
 
 */
+
+
+@layer base {
+  a {
+    @apply no-underline;
+    
+  }
+  
+}
