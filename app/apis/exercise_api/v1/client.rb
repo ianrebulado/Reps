@@ -1,57 +1,40 @@
 # frozen_string_literal: true
+
 require 'faraday'
 
-class NbaApi::V1::Client
-  EXERCISE_API_BASE_URL = 'exercisedb.p.rapidapi.com'
-  API_KEY = Rails.application.credentials.
+class ExerciseApi::V1::Client
+  EXERCISE_API_BASE_URL = 'https://exercisedb.p.rapidapi.com'
+  API_KEY = Rails.application.credentials.exercise.api_key
 
-  # def get_team(team_name)
+  def get_exercise(name)
+    response = request(
+      http_method: :get,
+      endpoint: "/exercises/name/#{name}",
+      params: { name:,
+                limit: 2 }
+    )
+
+    if response[:status] == 200
+      exercises = response[:body]
+      exercises.each do |exercise|
+        puts "Exercise: #{exercise[:name]}, Body Part: #{exercise[:bodyPart]}"
+      end
+    else
+      puts "Error: #{response[:status]}"
+    end
+
+  end
+
+  # def get_body_part(body_part)
   #   response = request(
   #     http_method: :get,
-  #     endpoint: 'teams',
-  #     params: { name: team_name }
+  #     endpoint: "/exercises/bodyPart/#{body_part}",
+  #     params: { body_part:,
+  #               limit: 1 }
   #   )
 
-  #   if response[:status] == 200
-  #     team_data = response[:body][:response].first
-  #     team_info = {
-  #       name: team_data[:name],
-  #       code: team_data[:code],
-  #       logo: team_data[:logo],
-  #       conference: team_data[:leagues][:standard][:conference]
-  #     }
-  #   end
-  #   team_info
+  #   nil unless response[:status] == 200
   # end
-
-
-  # def get_player(name)
-  #   response = request(
-  #     http_method: :get,
-  #     endpoint: 'players',
-  #     params: { name: }
-  #   )
-
-  #   if response[:status] == 200
-  #     players = response[:body][:response]
-  #     player_names = extract_player_names(players)
-
-  #     puts "names #{player_names}"
-  #   end
-  #   puts "return names: #{player_names}"
-  #   player_names
-  # end
-
-  # def live_games
-  #   response = request(
-  #     http_method: :get,
-  #     endpoint: 'games',
-  #     params: { date: date_today }
-  #   )
-
-  #   extract_live_game_info(response)
-  # end
-
 
   private
 
@@ -63,7 +46,7 @@ class NbaApi::V1::Client
           read_timeout: 10
         }
       }
-      Faraday.new(url: NBA_API_BASE_URL, **options) do |config|
+      Faraday.new(url: EXERCISE_API_BASE_URL, **options) do |config|
         config.headers['x-rapidapi-key'] = API_KEY
         config.request :json
         config.response :json, parser_options: { symbolize_names: true }
