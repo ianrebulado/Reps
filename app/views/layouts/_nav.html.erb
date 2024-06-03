@@ -6,21 +6,21 @@
   </div>
 
   <div class="flex flex-col tracking-wider justify-evenly text-base font-bold gap-6">
-    <div class="hover:bg-yellow-600 hover:text-black rounded-xl px-2 py-4 cursor-pointer">
+    <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
       <i class="bi bi-house"></i>
-      <%= link_to 'DASHBOARD', home_path, class: 'inline-block px-1 py-1 no-underline' %>
+      <%= link_to 'DASHBOARD', home_path, class: 'inline-block px-1 py-1 hover:text-black' %>
     </div>
     <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
       <i class="bi bi-person"></i>
       <%= link_to 'PROFILE', profile_path, class: 'inline-block px-1 py-1 hover:text-black' %>
     </div>
-    <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
+    <div class="hover:bg-yellow-600  rounded-xl px-2 py-4 cursor-pointer">
       <i class="bi bi-journal"></i>
-      <%= link_to 'PROGRAMS', workout_path, class: 'inline-block px-1 py-1 hover:text-black' %>
+      <%= link_to 'PROGRAMS', programs_path, class: 'inline-block px-1 py-1 hover:text-black' %>
     </div>
     <div class="hover:bg-yellow-600 rounded-xl px-2 py-4 cursor-pointer">
       <i class="bi bi-hammer"></i>
-      <%= link_to 'WORKOUTS', workout_path, class: 'inline-block px-1 py-1 hover:text-black' %>
+      <%= link_to 'YOUR WORKOUTS', programs_path, class: 'inline-block px-1 py-1 hover:text-black' %>
     </div>
   </div>
 

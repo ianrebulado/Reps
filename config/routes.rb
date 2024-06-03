@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   get "home", to: "home#home"
   get "profile", to: "home#show"
-  get "workout", to: "workouts#index"
+  get "programs", to: "home#programs"
 end
