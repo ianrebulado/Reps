@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :workouts, dependent: :destroy
+  has_many :exercises, through: :workouts
 
   def age
     now = Time.now.localtime.to_date
