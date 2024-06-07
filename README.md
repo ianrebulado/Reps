@@ -1,24 +1,26 @@
-# README
+# REPS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Reps is an app that helps users plan, track, and personalize their own workout. It offers features such as searching for workouts, creating personalized programs, adding exercises, and logging personal details for target tracking.
 
-Things you may want to cover:
+# Features:
 
-* Ruby version
+Search Workouts: Users can explore a wide range of workouts based on their preferences, goals, and fitness levels.
 
-* System dependencies
+Create Workout Programs: Build custom workout programs tailored to individual needs, including duration, intensity, and targeted muscle groups.
 
-* Configuration
+Add Exercises: Easily add exercises to workout routines, with options to include descriptions, sets, reps, and rest intervals.
 
-* Database creation
+Log Personal Details: Track progress by logging personal details like weight, body measurements, and performance metrics such as reps, sets, and weights used.
 
-* Database initialization
+Target Tracking: Set and monitor specific fitness goals, whether it's weight loss, muscle gain, or endurance improvement.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# How to Use:
 
-* Deployment instructions
+Search Workouts: Search exercises based on body parts. Choose from various options displayed.
 
-* ...
+Create Workout Programs: Design a personalized workout plan by selecting exercises, setting durations, and specifying intensity levels.
+
+Add Exercises: Browse through the exercise library and add relevant ones to your workout routines. Specify details like sets, reps, and rest intervals.
+
+Log Personal Details: Regularly update personal details such as weight and measurements.
