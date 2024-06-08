@@ -1,0 +1,19 @@
+<div class="min-h-screen flex bg-bg2">
+  <%= render 'layouts/nav' %>
+
+
+  <section id="personal-info-section" class="border border-gray-300 rounded-lg shadow-md p-6 m-6 w-1/2">
+  <div class="flex items-center gap-4">
+    <div class="w-20 h-20 bg-blue-500 rounded-full"></div>
+    <div class="flex flex-col">
+      <h2 class="text-2xl font-bold mb-4 text-white">Personal Information</h2>
+      <p class="mb-2"><span class="font-semibold text-white">Name:</span> <%= @user.name %></p>
+      <p class="mb-2"><span class="font-semibold text-white">Age:</span> <%= @user.age %></p>
+      <p class="mb-2"><span class="font-semibold text-white">Email:</span> <%= @user.email %></p>
+      <p class="mb-2"><span class="font-semibold text-white">Height:</span> <%= @user.height %> cm</p>
+      <p class="mb-4"><span class="font-semibold text-white">Weight:</span> <%= @user.weight %> lbs</p>
+      <%= link_to 'Edit Profile', edit_path(@user), class: "text-blue-500 hover:underline" %>
+    </div>
+  </div>
+</section>
+</div>
