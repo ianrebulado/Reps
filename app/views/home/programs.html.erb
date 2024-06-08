@@ -1,18 +1,19 @@
 <div class="flex min-h-screen">
   <%= render 'layouts/nav' %>
 
-  <section class="flex-1 w-3/5 flex justify-center items-center text-black min-h-screen bg-fixed bg-center bg-cover bg-no-repeat bg-bg3">
+  <section class="flex-1 w-full flex justify-center items-center text-black min-h-screen bg-fixed bg-center bg-cover bg-no-repeat bg-bg3">
 
     
     <div class="w-3/4 flex justify-between mt-12 gap-4 p-3">
 
       <div class="bg-gray-200 border-4 border-yellow-400 rounded-lg shadow-lg p-6 flex-1 flex flex-col">
         <div class="flex-1">
-          <h2 class="text-xl font-bold mb-2">Personalized <br> Workout Plans</h2>
-          <p class="text-gray-700"> Personalized workout plans tailored to your fitness level, preferences, and goals.</p>
+          <h2 class="text-xl font-bold mb-2">Body Weight <br> Workout Plan</h2>
+          <p class="text-gray-700"> Personalized workout plan for people who have no access to equipment, or just prefer calisthenics.</p>
         </div>
         <%= image_tag 'pushup.jpg', alt: 'Pushup', class:"h-48 w-full object-cover mt-4 rounded-lg" %>
-        <button class="rounded-lg bg-yellow-400 cursor-pointer mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800"> Start </button>
+       
+        <%= link_to "Start", create_default_workout_and_redirect_path, method: :get, class:'rounded-lg bg-yellow-400 cursor-pointer mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800'%>
 
       </div>
 
@@ -22,8 +23,8 @@
           <p class="text-gray-700">Customize your fitness journey for maximum results.</p>
         </div>
         <%= image_tag 'box.jpg', alt: 'Pushup', class:"h-48 w-full object-cover mt-4 rounded-lg" %>
-        <button class="rounded-lg bg-yellow-400 cursor-pointer mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800"> Start </button>
-
+      
+        <%= link_to 'Customize', new_workout_path, class: 'rounded-lg bg-yellow-400 cursor-pointer mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800' %>
       </div>
 
       <div class="bg-gray-200 border-4 border-yellow-400 rounded-lg shadow-lg p-6 flex-1 flex flex-col">
@@ -32,7 +33,7 @@
           <p class="text-gray-700">Monitor and track your fitness journey effectively.</p>
         </div>
         <%= image_tag 'watch.jpg', alt: 'Pushup', class:"h-48 w-full object-cover mt-4 rounded-lg" %>
-        <button class="rounded-lg bg-yellow-400 cursor-pointer mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800"> Start </button>
+        <button class="rounded-lg bg-yellow-400 cursor-not-allowed mt-4 flex items-center justify-center text-center w-full p-2 text-base font-bold text-zinc-800"> Coming Soon! </button>
 
       </div>
 
