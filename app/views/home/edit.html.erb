@@ -1,18 +1,28 @@
 <div class="min-h-screen flex">
   <%= render 'layouts/nav' %>
 
-<%= form_with(model: current_user, url: update_profile_path, method: :patch) do |form| %>
-  <div>
-    <%= form.label 'Weight(lbs)', style: "display: block" %>
-    <%= form.number_field :weight, class:'text-black' %>
+  <section class="flex-1 w-full flex justify-center items-center">
+  <div class="card border-yellow-400 border-2 shadow-lg w-1/2">
+    <div class="bg-yellow-400 w-full h-2 mb-4 p-10 flex justify-center items-center">
+      <h2 class="text-center">Edit Height and Weight</h2>
+    </div> 
+      <div class="p-4">
+        <%= form_with(model: current_user, url: update_profile_path, method: :patch) do |form| %>
+          <div class="field mt-4">
+            <%= form.label 'Weight(lbs)', style: "display: block", class: "text-black" %>
+            <%= form.number_field :weight, class:'text-black bg-white p-2 w-full' %>
+          </div>
+
+          <div class="field mt-4">
+            <%= form.label 'Height(CM)', style: "display: block", class: "text-black" %>
+            <%= form.number_field :height, class:'text-black bg-white p-2 w-full' %>
+          </div>
+
+          <div class="actions mt-4">
+            <%= form.submit "Update", class: "bg-yellow-400 text-center p-2 w-full rounded-md" %>
+          </div>
+        <% end %>
+        </div>
   </div>
-
-  <div>
-    <%= form.label 'Height(CM)', style: "display: block" %>
-    <%= form.number_field :height, class:'text-black' %>
-  </div>
-
-  <%= form.submit %>
-<% end %>
-
+  </section>
 </div>
