@@ -14,21 +14,25 @@
     <% if @exercises.present? %>
       <div class="flex flex-wrap mx-2 mt-4">
         <% @exercises.each do |exercise| %>
-          <div class="w-1/4 px-2 mb-4">
-            <div class="p-4 border rounded-md flex flex-col items-center">
-              <p class="mb-2 font-semibold text-base"><%= exercise[:name].titleize %></p>
-              <img src="<%= exercise[:gifUrl] %>" alt="Exercise GIF" class="max-h-25 bg-white mb-2">
-
+          <div class="w-1/4 h-1/2 px-2 mb-4">
+            <div class="border rounded-md flex flex-col items-center">
+              <div class="bg-yellow-400 rounded-t-md px-8 pt-4 text-center w-full h-24 flex justify-center items-center">
+                <p class="font-bold text-base text-black "> 
+                  <%= exercise[:name].titleize %>
+                </p>
+              </div>
+              <img src="<%= exercise[:gifUrl] %>" alt="Exercise GIF" class="max-h-25 bg-white m-4">
               <%= form_with model: [@workout, Exercise.new], local: true do |form| %>
                 <%= form.hidden_field :name, value: exercise[:name] %>
                 <%= form.hidden_field :body_part, value: exercise[:bodyPart] %>
                 <%= form.hidden_field :url, value: exercise[:gifUrl] %>
-                <%= form.submit "Add Exercise", class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+                <%= form.submit "Add Exercise", class: "bg-yellow-400 text-black text-sm font-bold px-4 py-2 rounded hover:bg-yellow-500 mb-4" %>
               <% end %>
-            </div>
-          </div>
-        <% end %>
+        </div>
       </div>
+    <% end %>
+  </div>
+
     <% end %>
   </section>
 </div>
