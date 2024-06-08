@@ -6,35 +6,51 @@ class ExerciseApi::V1::Client
   EXERCISE_API_BASE_URL = 'https://exercisedb.p.rapidapi.com'
   API_KEY = Rails.application.credentials.exercise.api_key
 
+# EXERCISE NAME
   def get_exercise(name)
     response = request(
       http_method: :get,
       endpoint: "/exercises/name/#{name}",
       params: { name:,
-                limit: 2 }
+                limit: 12 }
     )
 
     if response[:status] == 200
-      exercises = response[:body]
-      exercises.each do |exercise|
-        puts "Exercise: #{exercise[:name]}, Body Part: #{exercise[:bodyPart]}"
-      end
+      response[:body]
     else
       puts "Error: #{response[:status]}"
     end
-
   end
 
-  # def get_body_part(body_part)
-  #   response = request(
-  #     http_method: :get,
-  #     endpoint: "/exercises/bodyPart/#{body_part}",
-  #     params: { body_part:,
-  #               limit: 1 }
-  #   )
+  # EXERCISES PER PART
+  def get_exercises(body_part)
+    response = request(
+      http_method: :get,
+      endpoint: "/exercises/bodyPart/#{body_part}",
+      params: { body_part:,
+                limit: 12 }
+    )
 
-  #   nil unless response[:status] == 200
-  # end
+    if response[:status] == 200
+      response[:body]
+    else
+      puts "Error: #{response[:status]}"
+    end
+  end
+
+  # BODY PART LIST
+  def get_body_parts
+    response = request(
+      http_method: :get,
+      endpoint: '/exercises/bodyPartList'
+    )
+
+    if response[:status] == 200
+      response[:body]
+    else
+      puts "Error: #{response[:status]}"
+    end
+  end
 
   private
 
