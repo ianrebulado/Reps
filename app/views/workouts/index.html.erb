@@ -1,0 +1,31 @@
+<div class="flex max-h-screen overflow-x-auto">
+  <%= render 'layouts/nav' %>
+
+  <section class="overflow-auto w-full flex-1 p-4">
+    <div class="flex flex-wrap">
+      <% @workouts.each do |workout| %>
+        <div class="w-full mb-4">
+          <div class="border p-4 rounded-xl">
+            <div class="mb-4 flex justify-between items-center">
+              <h2 class="text-2xl font-bold"><%= workout.name %></h2>
+
+              <div class= "bg-red-500 text-white rounded-lg p-3 gap-2 font-semibold flex justify-center items-center">
+              <i class="bi bi-trash"></i>
+              <%= button_to "Delete", workout_path(workout), method: :delete, class: "text-white" %>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              <% workout.exercises.each do |exercise| %>
+                <div class="exercise-card">
+                  <span class="font-semibold text-lg mb-1"><%= exercise.name.capitalize %></span>
+                  <span class="text-sm text-gray-300 block"><%= exercise.body_part.capitalize %></span>
+                  <img src="<%= exercise.url %>" alt="Exercise GIF" class="exercise-gif">
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
