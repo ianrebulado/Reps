@@ -1,0 +1,18 @@
+<div class="border-2 border-yellow-400 rounded-xl flex items-center justify-center w-full max-w-lg mx-auto p-10 flex-col bg-gray-100 text-gray-900 shadow-lg"> 
+  <%= form_with model: @workout, local: true do |f| %>
+    <h2 class="text-2xl font-bold mb-6">Create A Workout</h2>
+    <div class="w-full mb-4">
+      <%= f.label :name, 'Workout Name', class: 'block text-lg font-medium mb-2' %>
+      <%= f.text_field :name, class: 'w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400' %>
+    </div>
+
+    <div class="w-full mb-6">
+      <%= f.label :date, "Day of the Week", class: 'block text-lg font-medium mb-2' %>
+      <%= f.select :date, options_for_select(['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']), { include_blank: true }, class: 'w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400' %>
+    </div>
+
+    <div class="w-full">
+      <%= f.submit 'Add Exercises', class: 'w-full bg-yellow-300 rounded-xl text-gray-900 font-bold px-4 py-2 cursor-pointer hover:bg-yellow-400 transition duration-300 ease-in-out' %>
+    </div>
+  <% end %>
+</div>
