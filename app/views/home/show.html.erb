@@ -2,42 +2,42 @@
   <%= render 'layouts/nav' %>
 
   <section class="flex-1 p-8 m-6">
-      <header class="w-full mb-8 flex items-center justify-between">
+      <header class="w-full mb-8 flex items-start justify-start gap-4">
         <h2 class="text-5xl font-bold mb-4 text-white">Personal Information</h2>
         <%= link_to edit_path(@user)  do %>
-        <span class="font-3xl text-white"><i class="bi bi-pencil-square" style="font-size: 2rem;"></i></span>
+        <i class="bi bi-pencil-square text-white font-bold text-xl"></i>
         <% end %>
       </header>
 
     <div class="flex flex-wrap gap-2">
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between"> Name <i class="bi bi-person-circle"></i> </span>
-        <p class="my-3 font-semibold text-base"><%= @user.name %> </p>
+      <div class="border-2 cards border-white rounded-xl font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black"> Name <i class="bi bi-person-circle text-white"></i> </span>
+        <p class="my-3 font-semibold text-lg p-4"><%= @user.name %> </p>
       </div>
 
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between">Age <i class="bi bi-calendar2-date"></i> </span>
-        <p class="my-3 font-semibold text-base"> <%= @user.age %></p>
+      <div class="border-2 cards border-white rounded-xl  font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black">Age <i class="bi bi-calendar2-date text-white"></i> </span>
+        <p class="my-3 font-semibold text-lg p-4"> <%= @user.age %></p>
       </div>
 
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between"> Birthdate <i class="bi bi-cake2-fill"></i></span>
-        <p class="my-3 font-semibold text-base"> <%= @user.date_of_birth %></p>
+      <div class="border-2 cards border-white rounded-xl  font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black"> Birthdate <i class="bi bi-cake2-fill text-white"></i></span>
+        <p class="my-3 font-semibold text-lg p-4"> <%= @user.date_of_birth %></p>
       </div>
 
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between">Email <i class="bi bi-envelope-at"></i></span>
-        <p class="my-3 font-semibold text-base"><%= @user.email %></p>
+      <div class="border-2 cards border-white rounded-xl  font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black">Email <i class="bi bi-envelope-at text-white"></i></span>
+        <p class="my-3 font-semibold text-lg p-4"><%= @user.email %></p>
       </div>
 
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between">Height <i class="bi bi-rulers"></i></span>
-        <p class="my-3 font-semibold text-base"> <%= "#{@user.height} cm" %> </p>
+      <div class="border-2 cards border-white rounded-xl  font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black">Height <i class="bi bi-rulers text-white"></i></span>
+        <p class="my-3 font-semibold text-lg p-4"> <%= "#{@user.height} cm" %> </p>
       </div>
 
-      <div class="border-2 cards border-white rounded-xl p-4 font-xl w-full md:w-5/12 lg:w-1/3">
-        <span class="font-bold text-xl text-white flex justify-between">Weight <i class="bi bi-rulers"></i></span>
-        <p class="my-3 font-semibold text-base"><%= "#{@user.weight} lbs" %> </p>
+      <div class="border-2 cards border-white rounded-xl  font-xl w-full md:w-5/12 lg:w-1/3">
+        <span class="font-bold text-xl  flex justify-between bg-yellow-400 rounded-t-lg p-3 text-black">Weight <i class="bi bi-rulers text-white"></i></span>
+        <p class="my-3 font-semibold text-lg p-4"><%= "#{@user.weight} lbs" %> </p>
       </div>
 
     </div>
