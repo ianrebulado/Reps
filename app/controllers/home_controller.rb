@@ -52,6 +52,6 @@ class HomeController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:weight, :height)
+    params.require(:user).permit(:weight, :height, :first_name, :last_name, :email)
   end
 end
